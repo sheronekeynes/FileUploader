@@ -6,10 +6,10 @@ import session from "express-session";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import bcrypt from "bcrypt";
-import { Pool } from "pg";
-import { PrismaClient } from "@prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaSessionStore } from "@quixo3/prisma-session-store";
+import prisma from "./db/prisma.js";
 import homeRouter from "./router/homeRouter.js";
+import flash from "connect-flash";
 
 dotenv.config();
 
@@ -18,14 +18,6 @@ const port = process.env.PORT || 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
-
-//const { PrismaClient } = pkg;
-const adapter = new PrismaPg(pool);
-const prisma = new PrismaClient({ adapter });
 
 // middlewares
 app.use(express.json());
@@ -38,14 +30,26 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(
   session({
+    name: "connect.sid",
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
+    store: new PrismaSessionStore(prisma, {
+      checkPeriod: 2 * 60 * 1000,
+      dbRecordIdIsSessionId: true,
+    }),
+    cookie: {
+      httpOnly: true,
+      secure: false,
+      maxAge: 1000 * 60 * 60 * 24,
+      sameSite: "lax",
+    },
   })
 );
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 passport.use(
   new LocalStrategy(async (username, password, done) => {
