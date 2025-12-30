@@ -30,31 +30,32 @@
   /* --font-family: "sans-serif"; */
 }
 
-.headerCont {
+.fileActionsCont {
   width: 100%;
+  padding: 1.2em 1em;
   display: flex;
   align-items: center;
-  padding: 1em 1em;
-  font-family: var(--font-family);
-  border-bottom: 1px solid var(--border);
+  justify-content: space-around;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
 }
 
-.headerHead {
-  font-size: clamp(1.2em, 4vw, 1.5em);
-}
-
-.smallLogoutBtn {
-  position: relative;
+.createFolderBtn {
   background-color: transparent;
-  border: none;
-  margin-left: auto;
-  color: var(--text-color1);
-  font-size: clamp(1.2em, 4vw, 1.5em);
   cursor: pointer;
+  border: none;
+  position: relative;
 }
 
-.iconWrapper {
-  display: inline-block;
+.createFolderIcon {
+  color: var(--text-color1);
+  font-size: clamp(1em, 4vw, 1.2em);
+}
+
+.createFileBtn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
   position: relative;
 }
 
@@ -68,7 +69,7 @@
   color: var(--text-color1);
   padding: 6px 10px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 10px;
   white-space: nowrap;
 
   opacity: 0;
@@ -76,11 +77,20 @@
   transition: opacity 0.2s ease;
 }
 
-.smallLogoutBtn:hover {
+.createFolderBtn:hover {
   color: var(--text-color2);
 }
 
-.smallLogoutBtn:hover .tooltipText {
+.createFolderBtn:hover .tooltipText {
+  opacity: 1;
+  visibility: visible;
+}
+
+.createFileBtn:hover {
+  color: var(--text-color2);
+}
+
+.createFileBtn:hover .tooltipText {
   opacity: 1;
   visibility: visible;
 }
