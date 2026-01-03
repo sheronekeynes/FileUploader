@@ -39,7 +39,52 @@
   flex-direction: column;
   color: var(--text);
   padding: 0em 1em;
+}
 
+.sideBarWrapperCont {
+  display: flex;
+}
+
+.sidebar {
+  height: 100vh;
+  flex-grow: 1;
+  border-right: 1px solid var(--border);
+  max-width: 250px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 10px;
+}
+
+.newFolderBtnCont {
+  display: flex;
+  background-color: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 0.3em;
+  padding: 4px 2px;
+  font-family: var(--font-family);
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: auto;
+  width: clamp(50px, 100vw, 200px);
+  cursor: pointer;
+  margin-top:.8em;
+}
+
+.newFolderBtn {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color1);
+}
+
+.folderIcon {
+  font-size: clamp(0.8em, 1vw, 1.2em);
+}
+
+.newFolderPara {
+  margin-left: 0.3em;
+  font-size: clamp(0.8em, 1vw, 1em);
+  margin-bottom: 0.1em;
 }
 
 .filesCont {
@@ -48,8 +93,9 @@
   padding: 1em 1em;
   font-family: var(--font-family);
   color: var(--text-color1);
-
+  flex-grow: 2;
   margin-top: 1em;
+  width: 100%;
 }
 
 .fileHeadersCont {
@@ -84,4 +130,10 @@
 .fileCreated {
   font-size: clamp(1em, 3vw, 1.1em);
   white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex;
+  }
 }

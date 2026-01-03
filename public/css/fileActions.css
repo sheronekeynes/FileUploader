@@ -106,3 +106,12 @@
   border-style: solid;
   border-color: transparent transparent #333 transparent;
 }
+
+
+@media (min-width:768px) {
+
+  .fileActionsCont{
+    display:none;
+  }
+  
+}

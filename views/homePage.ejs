@@ -14,23 +14,44 @@
     <div class="homepageCont">
       <%- include("./header") %>
 
-      <div class="filesCont">
-        <div class="fileHeadersCont">
-          <div class="fileNameCont">
-            <p class="fileName">Name</p>
+      <div class="sideBarWrapperCont">
+        <!-- sidebar for largescreens-->
+        <div class="sidebar">
+          <div class="newFolderBtnCont" id="newFolderBtn">
+            <button class="newFolderBtn">
+              <i class="fa-solid fa-folder-plus folderIcon"></i>
+            </button>
+            <p class="newFolderPara">New Folder</p>
           </div>
 
-          <div class="fileSizeCont">
-            <p class="fileSize">Size</p>
+          <div class="newFolderBtnCont" id="newFileBtn">
+            <button class="newFolderBtn">
+              <i class="fa-solid fa-file-circle-plus"></i>
+            </button>
+            <p class="newFolderPara">New File</p>
           </div>
+        </div>
 
-          <div class="fileCreatedCont">
-            <p class="fileCreated">Created At</p>
+        <div class="filesCont">
+          <div class="fileHeadersCont">
+            <div class="fileNameCont">
+              <p class="fileName">Name</p>
+            </div>
+
+            <div class="fileSizeCont">
+              <p class="fileSize">Size</p>
+            </div>
+
+            <div class="fileCreatedCont">
+              <p class="fileCreated">Created At</p>
+            </div>
           </div>
         </div>
       </div>
-
+      <%- include("./newFolderModal") %>
       <%- include("./fileActions") %>
     </div>
+
+    <script src="/js/homePage.js"></script>
   </body>
 </html>
