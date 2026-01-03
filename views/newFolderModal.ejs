@@ -11,11 +11,11 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="overlay">
+    <div class="overlay" id="folderModal">
       <form class="newFolderModalCont">
         <div class="topSection">
           <h1 class="head">New Folder</h1>
-          <button class="closeBtn"><i class="fa-solid fa-xmark"></i></button>
+          <button type="button" class="closeBtn"><i class="fa-solid fa-xmark"></i></button>
         </div>
 
         <label class="folderLabel">Name</label>
@@ -24,6 +24,8 @@
           placeholder="Enter Folder Name"
           class="folderInput"
         />
+
+        <button type="submit" class="createBtn">Create</button>
       </form>
     </div>
   </body>
