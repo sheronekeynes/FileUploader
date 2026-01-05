@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --navBar-color: hsl(0, 0%, 0%);
+  --background-color: hsl(0, 0%, 0%);
+  --btn-color: hsl(0, 0%, 10%);
+  --text-color1: hsl(0, 0%, 95%);
+  --text-color2: hsl(0, 0%, 70%);
+  --border: hsl(0, 0%, 30%);
+  --highlight: hsl(0, 0%, 60%);
+  --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+  --bg-dark: hsl(336 0% 1%);
+  --bg: hsl(300 0% 4%);
+  --bg-light: hsl(0 0% 9%);
+  --text: hsl(300 0% 95%);
+  --text-muted: hsl(300 0% 69%);
+  --highlight2: hsl(330 0% 39%);
+  --border2: hsl(0 0% 28%);
+  --border-muted: hsl(300 0% 18%);
+  --primary: hsl(0 66% 75%);
+  --secondary: hsl(183 52% 57%);
+  --danger: hsl(9 26% 64%);
+  --warning: hsl(52 19% 57%);
+  --success: hsl(146 17% 59%);
+  --info: hsl(217 28% 65%);
+  --font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif";
+  /* --font-family: "sans-serif"; */
+}
+.fileOverlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.newFolderModalCont {
+  background-color: var(--bg-light);
+
+  width: 85%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 0.5em;
+
+  flex-shrink: -1;
+}
+
+.topSection {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-top: 0.5em;
+  font-family: var(--font-family);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.7em;
+}
+
+.head {
+  align-self: flex-start;
+  margin-left: 0.5em;
+  margin-right: auto;
+  font-size: clamp(0.8em, 8vw, 1.5em);
+  font-family: var(--font-family);
+}
+
+.fileCloseBtn {
+  margin-left: auto;
+  color: var(--primary);
+  background-color: transparent;
+  border: none;
+  font-size: clamp(0.8em, 3vw, 1em);
+  cursor: pointer;
+  margin-right: 0.5em;
+  margin-top: 0.3em;
+}
+
+.folderLabel {
+  align-self: flex-start;
+  margin: 1em 1em;
+  font-family: var(--font-family);
+}
+
+.folderInput {
+  align-self: flex-start;
+  margin-right: 1.5em;
+  margin-left: 1em;
+  padding: 0.6em 0.5em;
+  width: 80%;
+  border: none;
+  border-radius: 0.3em;
+}
+
+.createBtn {
+  margin-top: 1.5em;
+  margin-right: auto;
+  margin-left: 1em;
+  padding: 0.7em 1.2em;
+  background-color: var(--secondary);
+  color: var(--text-color1);
+  border-radius: 0.3em;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2em;
+  font-family: var(--font-family);
+}
+@media (min-width: 768px) {
+  .newFolderModalCont {
+    width: 900px;
+    min-height: 200px;
+  }
+}
